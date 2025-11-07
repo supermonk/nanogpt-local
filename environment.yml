@@ -1,0 +1,45 @@
+name: NANO
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  # Base Python version
+  - python=3.10
+  
+  # Conda-managed packages
+  - pandas=2.2.3
+  - requests=2.32.3
+  - scipy=1.15.2
+  - scikit-learn=1.6.1
+  - tensorboard=2.19.0
+  - matplotlib=3.10.0
+  - tqdm=4.67.1
+  - thefuzz=0.22.1
+  - seaborn=0.13.2
+  - pillow=11.1.0
+  - pyyaml=6.0.2
+  - graphviz
+  - graphviz           # installs the Graphviz binaries (dot, neato, etc.)
+  - python-graphviz    # Python bindings for Graphviz
+  - jupyterlab         # optional, for notebooks
+  - pip=25.1
+  
+  # Pip-managed packages
+  - pip:
+    - timeout_decorator==0.5.0
+    
+    # --- PyTorch/Torchvision Fix ---
+    # FIX: Changed torch from 2.2.0 to 2.2.2 to satisfy torchvision==0.17.2 dependency.
+    # We simplify the platform-specific tags as the PyTorch CPU wheels are typically universal.
+    - torch==2.2.2
+    - torchvision==0.17.2
+    
+    # Required for pip to locate platform-specific wheels for torch/torchvision if needed.
+    - "--find-links https://download.pytorch.org/whl/torch/"
+    - "--find-links https://download.pytorch.org/whl/torchvision/"
+    
+    # Other pip-managed packages
+    - datasets==3.6.0
+    - numpy==2.2.5
+    - memory-profiler==0.61.0
+    - diffusers==0.33.1

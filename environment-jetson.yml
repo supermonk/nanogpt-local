@@ -1,0 +1,49 @@
+name: NANO
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - pandas=2.2.3
+  - requests=2.32.3
+  - scipy=1.15.2
+  - scikit-learn=1.6.1
+  - tensorboard=2.19.0
+  - matplotlib=3.10.0
+  - tqdm=4.67.1
+  - thefuzz=0.22.1
+  - seaborn=0.13.2
+  - pillow=11.1.0
+  - pyyaml=6.0.2
+  - graphviz
+  - python-graphviz
+  - jupyterlab
+  - pip
+
+  - pip:
+      - timeout_decorator==0.5.0
+      - datasets==3.6.0
+      - numpy==2.2.5
+      - memory-profiler==0.61.0
+      - diffusers==0.33.1
+
+# ==========================================================
+# 🔧 Post-install instructions for JetPack 6.x (CUDA 12.x)
+# ==========================================================
+# Install cuSparseLt (CUDA Sparse Linear Algebra Toolkit)
+# ----------------------------------------------------------
+# wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
+# sudo dpkg -i cuda-keyring_1.1-1_all.deb
+# sudo apt-get update
+# sudo apt-get -y install cusparselt
+# sudo apt-get -y install cusparselt-cuda-12
+
+# ==========================================================
+# 🔥 Install NVIDIA PyTorch build (JetPack 6.1 / CUDA 12.x)
+# ==========================================================
+# export TORCH_INSTALL=https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
+# python3 -m pip install --upgrade pip
+# python3 -m pip install numpy=='1.26.1'
+# python3 -m pip install --no-cache $TORCH_INSTALL
+# python3 -m pip install torchvision torchaudio --extra-index-url https://pypi.nvidia.com

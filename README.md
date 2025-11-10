@@ -1,6 +1,6 @@
 # Goal
 
-Sliced code bits relative to Andrej's [nano gpt video](https://www.youtube.com/watch?v=kCc8FmEb1nY) and [github](https://github.com/karpathy/ng-video-lecture)
+Sliced code bits relative to Andrej's [nano gpt video](https://www.youtube.com/watch?v=kCc8FmEb1nY) and [github](https://github.com/karpathy/ng-video-lecture). You will need a GPU to finish, either 100$ cloud or 300$ GPU, tired with 300$ version as it can be rerun many times.
 
 # Steps
 
